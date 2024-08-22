@@ -14,7 +14,7 @@ function App() {
     temp: { F: 999 },
     city: "",
   });
-  const [activeModal, setActiveModal] = useState("");
+  const [isOpen, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
 
   const handleCardClick = (card) => {
@@ -49,7 +49,7 @@ function App() {
       <ModalWithForm
         title="New garment"
         buttonText="Add garment"
-        activeModal={activeModal}
+        isOpen={isOpen}
         onClose={closeActiveModal}
       >
         <label htmlFor="name" className="modal__label">
@@ -108,7 +108,7 @@ function App() {
         </fieldset>
       </ModalWithForm>
       <ItemModal
-        activeModal={activeModal}
+        isOpen={isOpen}
         card={selectedCard}
         onClose={closeActiveModal}
       />
