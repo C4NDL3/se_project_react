@@ -1,7 +1,11 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import "./App.css";
-import { coordinates, APIKey } from "../../utils/constants";
+import {
+  coordinates,
+  APIKey,
+  defaultClothingItems,
+} from "../../utils/constants";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Main from "../Main/Main";
@@ -9,6 +13,8 @@ import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import ItemModal from "../ItemModal/ItemModal";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import { CurrentTempUnitContext } from "../../contexts/CurrentTempUnitContext";
+import AddItemModal from "../AddItemModal/AddItemModal";
+
 function App() {
   const [weatherData, setWeatherData] = useState({
     type: "",
@@ -18,6 +24,7 @@ function App() {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [currentTempUnit, setCurrentTempUnit] = useState("F");
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleCardClick = (card) => {
     setActiveModal("preview");
@@ -46,7 +53,22 @@ function App() {
       .catch(console.error);
   }, []);
 
-  // console.log(currentTempUnit);
+  const handleAddItemSubmit = async (newItem) => {
+    setIsLoading(true);
+    try {
+      const createdItem = await addItem({
+        name: newItem.name,
+        imageUrl: newItem.imageUrl,
+        weather: newItem.weather.toLowerCase(),
+      });
+      setClothingItems((prevItems) => [createdItem, ...prevItems]);
+      closeActiveModal();
+    } catch (err) {
+      console.error("Error adding item:", err);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <div className="page">
@@ -58,74 +80,18 @@ function App() {
           <Main weatherData={weatherData} handleCardClick={handleCardClick} />
           <Footer />
         </div>
-        <ModalWithForm
-          title="New garment"
-          buttonText="Add garment"
-          isOpen={activeModal === "add-garment"}
-          onClose={closeActiveModal}
-        >
-          <label htmlFor="name" className="modal__label">
-            Name{" "}
-            <input
-              type="text"
-              className="modal__input"
-              id="name"
-              placeholder="Name"
-            />
-          </label>
-          <label htmlFor="imageUrl" className="modal__label">
-            Image{" "}
-            <input
-              type="text"
-              className="modal__input"
-              id="imageUrl"
-              placeholder="Image URL"
-            />
-          </label>
-          <fieldset className="modal__radio-buttons">
-            <legend className="modal__legend">Select the weather type: </legend>
-            <label
-              htmlFor="hot"
-              className="modal__label modal__label_type_radio"
-            >
-              <input
-                id="hot"
-                type="radio"
-                className="modal__radio-input"
-                name="radioButton"
-              />{" "}
-              Hot
-            </label>
-            <label
-              htmlFor="warm"
-              className="modal__label modal__label_type_radio"
-            >
-              <input
-                id="warm"
-                type="radio"
-                className="modal__radio-input"
-                name="radioButton"
-              />{" "}
-              Warm
-            </label>
-            <label
-              htmlFor="cold"
-              className="modal__label modal__label_type_radio"
-            >
-              <input
-                id="cold"
-                type="radio"
-                className="modal__radio-input"
-                name="radioButton"
-              />{" "}
-              Cold
-            </label>
-          </fieldset>
-        </ModalWithForm>
+
+        <AddItemModal
+          isOpen={activeModal}
+          onAddItem={handleAddItemSubmit}
+          closeActiveModal={closeActiveModal}
+          isLoading={isLoading}
+        />
+
         <ItemModal
           isOpen={activeModal}
           card={selectedCard}
-          onClose={closeActiveModal}
+          closeActiveModal={closeActiveModal}
         />
       </CurrentTempUnitContext.Provider>
     </div>
