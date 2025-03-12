@@ -1,5 +1,5 @@
 import "./ClothesSection.css";
-import ItemCard from "../components/ItemCard/ItemCard";
+import ItemCard from "../ItemCard/ItemCard";
 
 function ClothesSection({ onCardClick, clothingItems, weatherData }) {
   return (
