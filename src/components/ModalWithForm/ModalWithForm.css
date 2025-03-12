@@ -78,6 +78,10 @@
   color: #fff;
   border: none;
   background-color: #000;
+  opacity: 100%;
+}
+
+.modal__submit-disabled {
   opacity: 0.3;
 }
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import {
@@ -15,7 +15,7 @@ import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import { CurrentTempUnitContext } from "../../contexts/CurrentTempUnitContext";
 import AddItemModal from "../AddItemModal/AddItemModal";
 import Profile from "../../Profile/Profile";
-import { getItems, addItem } from "../../utils/api";
+import { getItems, addItem, deleteItem } from "../../utils/api";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -75,6 +75,16 @@ function App() {
       .catch((err) => console.log(err));
   };
 
+  const handleDeleteItem = (itemId) => {
+    deleteItem(itemId)
+      .then(() => {
+        setClothingItems((prevItems) =>
+          prevItems.filter((item) => item._id !== itemId)
+        );
+      })
+      .catch((err) => console.error("Failed to delete item:", err));
+  };
+
   return (
     <div className="page">
       <CurrentTempUnitContext.Provider
@@ -117,6 +127,7 @@ function App() {
           isOpen={activeModal}
           card={selectedCard}
           closeActiveModal={closeActiveModal}
+          handleDeleteItem={handleDeleteItem}
         />
       </CurrentTempUnitContext.Provider>
     </div>

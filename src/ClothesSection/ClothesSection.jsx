@@ -11,7 +11,7 @@ function ClothesSection({ onCardClick, clothingItems, weatherData }) {
       <ul className="cards__list">
         {clothingItems
           .filter((item) => {
-            return item.weather === weatherData.type;
+            return weatherData && item.weather === weatherData.type;
           })
           .map((item) => {
             return (

@@ -131,6 +131,48 @@
       "imageUrl": "",
       "weather": "",
       "_id": 21
+    },
+    {
+      "name": "testing 1",
+      "imageUrl": "https://assets.burberry.com/is/image/Burberryltd/BFC71332-5EF9-40BD-AAA6-F097E244428E?$BBY_V3_SL_1$&wid=1501&hei=1500",
+      "weather": "cold",
+      "_id": 22
+    },
+    {
+      "name": "testing 2",
+      "imageUrl": "https://hardnheavy.style/cdn/shop/products/sexy-high-heel-womens-boots-classic-waterproof-black-platform-boots-002_b95ff33d-03ae-45a9-b435-82050b601ce7.jpg?v=1679102551",
+      "weather": "cold",
+      "_id": 23
+    },
+    {
+      "name": "Gloves",
+      "imageUrl": "https://rhanders.com/cdn/shop/collections/RHANDERS_Arabella_3.jpg?v=1674115666&width=2730",
+      "weather": "cold",
+      "_id": 24
+    },
+    {
+      "name": "Scarf",
+      "imageUrl": "https://i5.walmartimages.com/seo/Rose-Red-Solid-Scarfs-for-Women-Fashion-Warm-Neck-Womens-Winter-Scarves-Pashmina-Silk-Scarf-Wrap-with-Fringes-for-Ladies-by-Oussum_b31316b9-63fb-4450-9201-de1d539fe592.dbcde73f3f96295541bbf641d9a14b0e.jpeg",
+      "weather": "cold",
+      "_id": 25
+    },
+    {
+      "name": "test 4",
+      "imageUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQrmTplJAiui9-HWsxjDVLv1UfTg0S-B8WfnuV-mBBeE61gWAzz1aSE9Lms_RWYctBQ5rfJwS6HG5evKGjDYe_51fK_8obtED3bnwsgWuIoQhIzyZbZO0_C6bhTlqanPhvsoxQKXdc&usqp=CAc",
+      "weather": "cold",
+      "_id": 27
+    },
+    {
+      "name": "Hoodie",
+      "imageUrl": "https://m.media-amazon.com/images/I/61-CrN0GG0L._AC_UY1000_.jpg",
+      "weather": "cold",
+      "_id": 28
+    },
+    {
+      "name": "Coat",
+      "imageUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTHslU-vBKBOpNosP8RGPT8_jTzfr7XnRTQc0Ggodff6MzBdXP6BcjAJP78ZVV-CBShWnuHkb1snV2nXo5QdvqpOvGUc4eh4G7SLZKHsHu0JNGyj4zuq_5N-ca4fT5qWjQpJn9aJok&usqp=CAc",
+      "weather": "cold",
+      "_id": 29
     }
   ]
 }
