@@ -9,7 +9,7 @@ import {
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Main from "../Main/Main";
-import ModalWithForm from "../ModalWithForm/ModalWithForm";
+// import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import ItemModal from "../ItemModal/ItemModal";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import { CurrentTempUnitContext } from "../../contexts/CurrentTempUnitContext";
@@ -26,7 +26,7 @@ function App() {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [currentTempUnit, setCurrentTempUnit] = useState("F");
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
   const [clothingItems, setClothingItems] = useState([]);
 
   const handleCardClick = (card) => {
@@ -81,6 +81,7 @@ function App() {
         setClothingItems((prevItems) =>
           prevItems.filter((item) => item._id !== itemId)
         );
+        closeActiveModal();
       })
       .catch((err) => console.error("Failed to delete item:", err));
   };
@@ -109,6 +110,8 @@ function App() {
                 <Profile
                   onCardClick={handleCardClick}
                   clothingItems={clothingItems}
+                  weatherData={weatherData}
+                  handleAddClick={handleAddClick}
                 />
               }
             />
@@ -117,10 +120,10 @@ function App() {
         </div>
 
         <AddItemModal
-          isOpen={activeModal}
+          isOpen={activeModal === "add-garment"}
           onAddItem={handleAddItemSubmit}
           closeActiveModal={closeActiveModal}
-          isLoading={isLoading}
+          // isLoading={isLoading}
         />
 
         <ItemModal

@@ -103,36 +103,6 @@
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/T-Shirt.png?etag=44ed1963c44ab19cd2f5011522c5fc09"
     },
     {
-      "name": "test",
-      "imageUrl": "",
-      "weather": "",
-      "_id": 17
-    },
-    {
-      "name": "test",
-      "imageUrl": "",
-      "weather": "",
-      "_id": 18
-    },
-    {
-      "name": "test 2.0",
-      "imageUrl": "",
-      "weather": "",
-      "_id": 19
-    },
-    {
-      "name": "another test",
-      "imageUrl": "",
-      "weather": "",
-      "_id": 20
-    },
-    {
-      "name": "testing",
-      "imageUrl": "",
-      "weather": "",
-      "_id": 21
-    },
-    {
       "name": "testing 1",
       "imageUrl": "https://assets.burberry.com/is/image/Burberryltd/BFC71332-5EF9-40BD-AAA6-F097E244428E?$BBY_V3_SL_1$&wid=1501&hei=1500",
       "weather": "cold",
@@ -149,12 +119,6 @@
       "imageUrl": "https://rhanders.com/cdn/shop/collections/RHANDERS_Arabella_3.jpg?v=1674115666&width=2730",
       "weather": "cold",
       "_id": 24
-    },
-    {
-      "name": "Scarf",
-      "imageUrl": "https://i5.walmartimages.com/seo/Rose-Red-Solid-Scarfs-for-Women-Fashion-Warm-Neck-Womens-Winter-Scarves-Pashmina-Silk-Scarf-Wrap-with-Fringes-for-Ladies-by-Oussum_b31316b9-63fb-4450-9201-de1d539fe592.dbcde73f3f96295541bbf641d9a14b0e.jpeg",
-      "weather": "cold",
-      "_id": 25
     },
     {
       "name": "test 4",
