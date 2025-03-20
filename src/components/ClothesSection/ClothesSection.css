@@ -10,11 +10,15 @@
 .your__items {
   font-size: 20px;
   /* line-height: 24.8px; */
+  margin: 0;
+  text-align: center;
 }
 
 .clothes__btn {
   border: none;
   background: transparent;
   font-size: 20px;
-  margin-left: 100px;
+  margin-left: 200px;
+  text-align: center;
+  /* padding: 0; */
 }
