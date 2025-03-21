@@ -9,7 +9,7 @@ function ClothesSection({
 }) {
   return (
     <div className="clothes-section">
-      <div>
+      <div className="clothes-section__header">
         <p className="your__items">Your items</p>
         <button className="clothes__btn" onClick={handleAddClick}>
           + Add New

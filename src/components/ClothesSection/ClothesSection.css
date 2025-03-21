@@ -12,13 +12,20 @@
   /* line-height: 24.8px; */
   margin: 0;
   text-align: center;
+  font-weight: 400;
 }
 
 .clothes__btn {
   border: none;
   background: transparent;
   font-size: 20px;
-  margin-left: 200px;
+  margin-left: 20px;
   text-align: center;
+  cursor: pointer;
   /* padding: 0; */
+}
+
+.clothes-section__header {
+  display: flex;
+  align-items: center;
 }
