@@ -1,9 +1,18 @@
 const baseUrl = "http://localhost:3001";
 
+export const checkResponse = (res) => {
+  if (res.ok) {
+    return res.json();
+  }
+  return Promise.reject(`Error: ${res.status}`);
+};
+
+export const request = (url, options) => {
+  return fetch(url, options).then(checkResponse);
+};
+
 function getItems() {
-  return fetch(`${baseUrl}/items`).then((res) => {
-    return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
-  });
+  return fetch(`${baseUrl}/items`).then(checkResponse);
 }
 
 function addItem(item) {
@@ -26,9 +35,7 @@ function addItem(item) {
 function deleteItem(itemId) {
   return fetch(`${baseUrl}/items/${itemId}`, {
     method: "DELETE",
-  }).then((res) => {
-    return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
-  });
+  }).then(checkResponse);
 }
 
 export { getItems, addItem, deleteItem };
